@@ -1,0 +1,41 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"  
+             xmlns:demo="clr-namespace:Blockcore.Wallet;assembly=Blockcore.Wallet"
+             xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles"
+             xmlns:models="clr-namespace:Blockcore.Wallet.Models"
+             xmlns:conv="clr-namespace:Blockcore.Wallet.Converters"
+             x:Class="Blockcore.Wallet.Pages.Home" >
+  <UserControl.Resources>
+    <conv:EnumDescriptionConverter x:Key="GetDescription"/>
+  </UserControl.Resources>
+    <StackPanel Margin="16, 0" MaxWidth="600">
+      <StackPanel.Styles>
+        <Style Selector="TextBlock.Content, TextBlock.Subheadline">
+          <Setter Property="HorizontalAlignment" Value="Stretch"/>
+          <Setter Property="TextAlignment" Value="Center"/>
+          <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+      </StackPanel.Styles>
+      <Image Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Top"
+              Source="avares://Blockcore.Wallet/Assets/blockcorelogo.png" Margin="0,0,0,-8"/>
+      <TextBlock Classes="Headline4 Subheadline" Text="👋 Welcome to Blockcore Wallet!"/>
+
+      <StackPanel Margin="16">
+        <StackPanel.Styles>
+          <Style Selector="Button">
+            <Setter Property="Margin" Value="4"/>
+          </Style>
+        </StackPanel.Styles>
+        <WrapPanel HorizontalAlignment="Center" MaxWidth="600" >
+          <Button Classes="Flat" Content="WEBSITE" Command="{Binding Path=OpenProjectRepoLink}"/>
+          <Button Classes="Flat" Content="USE DARK THEME" Command="{Binding Path=UseMaterialUIDarkTheme}"/>
+          <Button Classes="Flat" Content="USE LIGHT THEME" Command="{Binding Path=UseMaterialUILightTheme}"/>
+        </WrapPanel>
+
+      </StackPanel>
+
+    </StackPanel>
+</UserControl>
