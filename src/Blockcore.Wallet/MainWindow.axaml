@@ -8,7 +8,7 @@
         xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
         xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
-        Width="1280" Height="720" MinWidth="720"
+        Width="920" Height="600" MinWidth="720" MinHeight="400"
         Title="Blockcore Wallet version 1.0.0"
 		Icon="/Assets/app.ico">
     <Window.Styles>
@@ -54,27 +54,28 @@
                                     <Setter Property="IsEnabled" Value="{Binding $self.Content.IsEnabled}" />
                                 </Style>
                             </ListBox.Styles>
-                            <TextBlock Classes="Body2" Text="Home" />
-                            <TextBlock Classes="Body2" Text="Buttons" />
-                            <TextBlock Classes="Body2" Text="Toggles" />
-                            <TextBlock Classes="Body2" Text="Fields" />
-                            <TextBlock Classes="Body2" Text="ComboBoxes" />
-                            <TextBlock Classes="Body2" Text="Material Icons" />
-                            <TextBlock Classes="Body2" Text="Sliders" />
-                            <TextBlock Classes="Body2" Text="Progress indicators" />
-                            <TextBlock Classes="Body2" Text="Lists" />
-                            <TextBlock Classes="Body2" Text="Expanders" />
-                            <TextBlock Classes="Body2" Text="ColorZones" />
-                            <TextBlock Classes="Body2" Text="Dialogs" />
-                            <TextBlock Classes="Body2" Text="ScrollViewer" />
-                            <TextBlock Classes="Body2" Text="SideSheet" />
-                            <TextBlock Classes="Body2" Text="TabControls" />
-                            <TextBlock Classes="Body2" Text="TreeViews" />
-                            <TextBlock Classes="Body2" Text="Card" />
-                            <TextBlock Classes="Body2" Text="Typography" />
-                            <TextBlock Classes="Body2" Text="Pickers" />
-                            <TextBlock Classes="Body2" Text="Shadows" IsEnabled="False" />
-                        </ListBox>
+							<MenuItem Header="Home">
+								<MenuItem.Icon>
+									<avalonia:MaterialIcon Kind="HomeCircleOutline" Width="24" Height="24" />
+								</MenuItem.Icon>
+							</MenuItem>
+							<MenuItem Header="Wallet">
+								<MenuItem.Icon>
+									<avalonia:MaterialIcon Kind="WalletOutline" Width="24" Height="24" />
+								</MenuItem.Icon>
+							</MenuItem>
+							<MenuItem Header="Setting">
+								<MenuItem.Icon>
+									<avalonia:MaterialIcon Kind="CogOutline" Width="24" Height="24" />
+								</MenuItem.Icon>
+							</MenuItem>
+							<MenuItem Header="Logout">
+								<MenuItem.Icon>
+									<avalonia:MaterialIcon Kind="Logout" Width="24" Height="24" />
+								</MenuItem.Icon>
+							</MenuItem>
+
+						</ListBox>
                     </StackPanel>
                 </ScrollViewer>
             </styles:NavigationDrawer.LeftDrawerContent>
@@ -91,29 +92,42 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <ToggleButton Name="NavDrawerSwitch"
-                                      Classes="Flat TransparentBack"
+                                      Classes="Flat TransparentBack Accent"
                                       Width="32" Height="32" Padding="4">
                             <avalonia:MaterialIcon Kind="Menu" Width="24" Height="24" />
                         </ToggleButton>
                         <TextBlock Grid.Column="2" Classes="Headline6" Text="Blockcore Wallet"
                                    VerticalAlignment="Center" />
-                        <Menu Grid.Column="4" Height="32" Padding="0" Margin="0">
+
+ 						<Panel Grid.Column="3" VerticalAlignment="Center">
+							<Button Name="NetworkStatus" Classes="Flat Accent" Content="Network Status" ToolTip.Tip='Network Status' Click="NetworkStatusButtonMenuItem_OnClick" >
+								<avalonia:MaterialIcon Kind="CloudCheckOutline" Width="32" Height="32" />
+							</Button>
+						</Panel>
+						
+						<Menu Grid.Column="4" Height="32" Padding="0" Margin="0">
                             <MenuItem Height="32" Width="32" Header="{avalonia:MaterialIconExt DotsVertical, Size=24}">
-                                <MenuItem Header="Hello!" Click="HelloButtonMenuItem_OnClick">
+                                <MenuItem Header="About" Click="AboutButtonMenuItem_OnClick">
                                     <MenuItem.Icon>
-                                        <avalonia:MaterialIcon Kind="Hand" Width="24" Height="24" />
+                                        <avalonia:MaterialIcon Kind="InformationOutline" Width="24" Height="24" />
                                     </MenuItem.Icon>
                                 </MenuItem>
-                                <Separator />
-                                <MenuItem Header="Action 1" />
-                                <MenuItem Header="Action 2" />
-                                <MenuItem Header="Action 3" />
-                                <Separator />
-                                <MenuItem Header="Goodbye" Click="GoodbyeButtonMenuItem_OnClick">
-                                    <MenuItem.Icon>
-                                        <avalonia:MaterialIcon Kind="ExitRun" Width="24" Height="24" />
-                                    </MenuItem.Icon>
-                                </MenuItem>
+								<MenuItem Header="Tools" Click="ToolsButtonMenuItem_OnClick">
+									<MenuItem.Icon>
+										<avalonia:MaterialIcon Kind="Tools" Width="24" Height="24" />
+									</MenuItem.Icon>
+								</MenuItem>
+								<MenuItem Header="Update" Click="UpdateButtonMenuItem_OnClick">
+									<MenuItem.Icon>
+										<avalonia:MaterialIcon Kind="Update" Width="24" Height="24" />
+									</MenuItem.Icon>
+								</MenuItem>
+								<Separator />
+								<MenuItem Header="Logout" Click="LogoutButtonMenuItem_OnClick">
+									<MenuItem.Icon>
+										<avalonia:MaterialIcon Kind="Logout" Width="24" Height="24" />
+									</MenuItem.Icon>
+								</MenuItem>
                             </MenuItem>
                         </Menu>
                     </Grid>
@@ -136,65 +150,17 @@
                                 </Style>
                             </Carousel.Styles>
                             <!-- Main page -->
-                            <pages:Home />
-
-                            <!-- Buttons -->
-                            <pages:ButtonsDemo />
-
-                            <!-- Toggles -->
-                            <pages:TogglesDemo />
-
-                            <!-- Fields -->
-                            <pages:FieldsDemo />
-
-                            <!-- ComboBoxes -->
-                            <pages:ComboBoxesDemo />
-
-                            <!-- Icons -->
-                            <pages:IconsDemo />
-
-                            <!-- Sliders -->
-                            <pages:SlidersDemo />
-
-                            <!-- Progress indicators -->
-                            <pages:ProgressIndicatorDemo />
-
-                            <!-- Lists -->
-                            <pages:ListsDemo />
-                            
-                            <!-- Expanders -->
-                            <pages:ExpandersDemo />
-
-                            <!-- ColorZones -->
-                            <pages:ColorZonesDemo />
-
-                            <!-- Dialogs -->
-                            <pages:DialogDemo />
-
-                            <!-- ScrollViewer -->
-                            <pages:ScrollViewerDemo />
-                            
-                            <!-- SideSheet -->
-                            <pages:SideSheetDemo />
-
-                            <!-- TabControls -->
-                            <pages:TabsDemo />
-                            
-                            <!-- TreeViews -->
-                            <pages:TreeViewsDemo />
-
-                            <!-- Card -->
-                            <pages:CardsDemo />
-
-                            <!-- Typography -->
-                            <pages:TypographyDemo />
-
-                            <!-- Pickers -->
-                            <pages:PickersDemo />
-                            
-                            <!-- Shadows -->
-                            <pages:NotReadyDemo />
-                        </Carousel>
+                          
+							<pages:Home />
+							<pages:Wallet />
+							<pages:Setting />
+							<pages:Logout />
+							<pages:About />
+							<pages:Tools />
+							<pages:Update />
+							<pages:NetworkStatus />
+							
+						</Carousel>
                     </Border>
                 </ScrollViewer>
             </DockPanel>

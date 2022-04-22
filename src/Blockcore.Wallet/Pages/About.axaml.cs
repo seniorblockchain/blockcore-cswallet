@@ -1,17 +1,14 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
-using Blockcore.Wallet.ViewModels;
 
 namespace Blockcore.Wallet.Pages
 {
-    public class FieldsDemo : UserControl
+    public class About : UserControl
     {
-        public FieldsDemo()
+        public About()
         {
             this.InitializeComponent();
-
-            DataContext = new TextFieldsViewModel();
         }
 
         private void InitializeComponent()

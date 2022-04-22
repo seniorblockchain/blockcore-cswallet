@@ -32,13 +32,37 @@
     <AvaloniaResource Include="**\*.axaml">
       <SubType>Designer</SubType>
     </AvaloniaResource>
+    <AdditionalFiles Remove="Pages\About.axaml" />
+    <AdditionalFiles Remove="Pages\Logout.axaml" />
+    <AdditionalFiles Remove="Pages\NetworkStatus.axaml" />
+    <AdditionalFiles Remove="Pages\Setting.axaml" />
+    <AdditionalFiles Remove="Pages\Tools.axaml" />
+    <AdditionalFiles Remove="Pages\Update.axaml" />
+    <AdditionalFiles Remove="Pages\Wallet.axaml" />
     <None Remove="Assets\app.ico" />
     <None Remove="Assets\blockcorelogo-w.png" />
     <None Remove="Assets\blockcorelogo.png" />
     <Content Include="Assets\app.ico" />
-    <Compile Update="Pages\SideSheetDemo.axaml.cs">
-      <DependentUpon>SideSheetDemo.axaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Update="Pages\Setting.axaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Logout.axaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\About.axaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Tools.axaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Update.axaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\NetworkStatus.axaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Wallet.axaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace Blockcore.Wallet.Pages
 {
-    public class ColorZonesDemo : UserControl
+    public class Setting : UserControl
     {
-        public ColorZonesDemo()
+        public Setting()
         {
             this.InitializeComponent();
         }

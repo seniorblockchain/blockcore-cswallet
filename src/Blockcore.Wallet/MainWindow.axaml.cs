@@ -72,12 +72,27 @@ namespace Blockcore.Wallet {
 
         private List<SnackbarModel> helloSnackBars = new List<SnackbarModel>();
 
-        private void HelloButtonMenuItem_OnClick(object? sender, RoutedEventArgs e)
+        private void AboutButtonMenuItem_OnClick(object? sender, RoutedEventArgs e)
         {
-            var helloSnackBar = new SnackbarModel("Hello, user!", TimeSpan.Zero);
-            SnackbarHost.Post(helloSnackBar);
-            helloSnackBars.Add(helloSnackBar);
+            PageCarousel.SelectedIndex = 4;
         }
+        private void ToolsButtonMenuItem_OnClick(object? sender, RoutedEventArgs e)
+        {
+            PageCarousel.SelectedIndex = 5;
+        }
+        private void UpdateButtonMenuItem_OnClick(object? sender, RoutedEventArgs e)
+        {
+            PageCarousel.SelectedIndex = 6;
+        }
+        private void LogoutButtonMenuItem_OnClick(object? sender, RoutedEventArgs e)
+        {
+            PageCarousel.SelectedIndex = 3;
+        }
+        private void NetworkStatusButtonMenuItem_OnClick(object? sender, RoutedEventArgs e)
+        {
+            PageCarousel.SelectedIndex = 7;
+        }
+        
 
         private void GoodbyeButtonMenuItem_OnClick(object? sender, RoutedEventArgs e)
         {
