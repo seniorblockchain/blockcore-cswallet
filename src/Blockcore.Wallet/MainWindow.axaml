@@ -92,13 +92,20 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <ToggleButton Name="NavDrawerSwitch"
-                                      Classes="Flat TransparentBack"
+                                      Classes="Flat TransparentBack Accent"
                                       Width="32" Height="32" Padding="4">
                             <avalonia:MaterialIcon Kind="Menu" Width="24" Height="24" />
                         </ToggleButton>
                         <TextBlock Grid.Column="2" Classes="Headline6" Text="Blockcore Wallet"
                                    VerticalAlignment="Center" />
-                        <Menu Grid.Column="4" Height="32" Padding="0" Margin="0">
+
+ 						<Panel Grid.Column="3" VerticalAlignment="Center">
+							<Button Name="NetworkStatus" Classes="Flat Accent" Content="Network Status" ToolTip.Tip='Network Status' Click="NetworkStatusButtonMenuItem_OnClick" >
+								<avalonia:MaterialIcon Kind="CloudCheckOutline" Width="32" Height="32" />
+							</Button>
+						</Panel>
+						
+						<Menu Grid.Column="4" Height="32" Padding="0" Margin="0">
                             <MenuItem Height="32" Width="32" Header="{avalonia:MaterialIconExt DotsVertical, Size=24}">
                                 <MenuItem Header="About" Click="AboutButtonMenuItem_OnClick">
                                     <MenuItem.Icon>
@@ -143,14 +150,17 @@
                                 </Style>
                             </Carousel.Styles>
                             <!-- Main page -->
-                            <pages:Home />
+                          
+							<pages:Home />
 							<pages:Wallet />
 							<pages:Setting />
 							<pages:Logout />
 							<pages:About />
 							<pages:Tools />
 							<pages:Update />
-                        </Carousel>
+							<pages:NetworkStatus />
+							
+						</Carousel>
                     </Border>
                 </ScrollViewer>
             </DockPanel>

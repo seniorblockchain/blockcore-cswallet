@@ -88,6 +88,12 @@ namespace Blockcore.Wallet {
         {
             PageCarousel.SelectedIndex = 3;
         }
+        private void NetworkStatusButtonMenuItem_OnClick(object? sender, RoutedEventArgs e)
+        {
+            PageCarousel.SelectedIndex = 7;
+        }
+        
+
         private void GoodbyeButtonMenuItem_OnClick(object? sender, RoutedEventArgs e)
         {
             foreach (var snackbarModel in helloSnackBars)
